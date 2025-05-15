@@ -1,5 +1,6 @@
 # Multi-Feature AI Assistant 🤖
 
+![AI Assistant Demo](D:\JMM_Technologies\Text_to_SQL_Groq_API\demo.png)
 
 A comprehensive Streamlit application combining three powerful AI-driven tools:
 1. **Natural Language to SQL Generator** 🔍
@@ -49,13 +50,3 @@ pip install -r requirements.txt
 
 # Create .env file
 echo "GROQ_API_KEY=your_key_here" > .env
-------------------------------------------------------
-
-graph TD
-    A[Streamlit UI] --> B[Database Module]
-    A --> C[Website Module]
-    A --> D[YouTube Module]
-    B --> E[SQLite Database]
-    C --> F[Trafilatura]
-    D --> G[YouTube API]
-    All --> H[Groq LLM]
