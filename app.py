@@ -17,7 +17,7 @@ if not api_key:
 st.set_page_config(page_title="Multi-Feature AI Assistant", layout="wide")
 st.title("Multi-Feature AI Assistant")
 
-# Existing database functionality
+
 with st.expander("Database Query Feature", expanded=True):
     if "db_path" not in st.session_state:
         st.session_state.db_path = None
@@ -61,7 +61,7 @@ with st.expander("Database Query Feature", expanded=True):
             else:
                 st.warning("Please enter a question.")
 
-# New Website QA Feature
+
 with st.expander("Website QA Feature"):
     st.header("Website Question Answering")
     web_url = st.text_input("Enter website URL:")
@@ -81,7 +81,7 @@ with st.expander("Website QA Feature"):
         else:
             st.warning("Please provide both URL and question")
 
-# New YouTube Summary Feature
+
 with st.expander("YouTube Summary Feature"):
     st.header("YouTube Video Summarizer")
     yt_url = st.text_input("Enter YouTube Video URL:")
