@@ -17,7 +17,7 @@ if not api_key:
 st.set_page_config(page_title="Multi-Feature AI Assistant", layout="wide")
 st.title("Multi-Feature AI Assistant")
 
-# Create tabs instead of nested expanders
+
 tab1, tab2, tab3 = st.tabs(["Database Query", "Website QA", "YouTube Summary"])
 
 with tab1:
@@ -39,7 +39,8 @@ with tab1:
             st.session_state.schema_details = schema_details
             st.success("Database created successfully!")
     
-    # Using a separate expander for schema display (not nested)
+
+
     if st.session_state.get("table_info"):
         schema_expander = st.expander("View Database Schema")
         with schema_expander:
@@ -48,6 +49,8 @@ with tab1:
                 st.write(f"Columns: {', '.join(info['columns'])}")
                 st.dataframe(pd.DataFrame(info['sample_data']))
     
+
+
     if st.session_state.db_path:
         st.subheader("Generate SQL Query")
         question = st.text_area("Enter your data question:", height=100, key="sql_question")
@@ -85,6 +88,7 @@ with tab2:
                     st.write(answer)
         else:
             st.warning("Please provide both URL and question")
+
 
 with tab3:
     st.header("YouTube Video Summarizer")
