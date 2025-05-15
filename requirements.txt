@@ -1,0 +1,7 @@
+langchain
+streamlit
+dotenv
+pandas
+sqlite3
+youtube_transcript_api
+trafilatura
