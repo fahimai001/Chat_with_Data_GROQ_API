@@ -49,3 +49,13 @@ pip install -r requirements.txt
 
 # Create .env file
 echo "GROQ_API_KEY=your_key_here" > .env
+------------------------------------------------------
+
+graph TD
+    A[Streamlit UI] --> B[Database Module]
+    A --> C[Website Module]
+    A --> D[YouTube Module]
+    B --> E[SQLite Database]
+    C --> F[Trafilatura]
+    D --> G[YouTube API]
+    All --> H[Groq LLM]
