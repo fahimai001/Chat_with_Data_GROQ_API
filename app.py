@@ -17,12 +17,16 @@ if not api_key:
 st.set_page_config(page_title="Multi-Feature AI Assistant", layout="wide")
 st.title("Multi-Feature AI Assistant")
 
+# Create tabs instead of nested expanders
+tab1, tab2, tab3 = st.tabs(["Database Query", "Website QA", "YouTube Summary"])
 
-with st.expander("Database Query Feature", expanded=True):
+with tab1:
+    st.header("Database Query Feature")
+    
     if "db_path" not in st.session_state:
         st.session_state.db_path = None
     
-    st.header("Upload Dataset")
+    st.subheader("Upload Dataset")
     uploaded_files = st.file_uploader("Upload CSV/Excel files", type=["csv", "xlsx", "xls"], 
                                     accept_multiple_files=True, key="db_uploader")
     
@@ -35,15 +39,17 @@ with st.expander("Database Query Feature", expanded=True):
             st.session_state.schema_details = schema_details
             st.success("Database created successfully!")
     
+    # Using a separate expander for schema display (not nested)
     if st.session_state.get("table_info"):
-        with st.expander("View Database Schema"):
+        schema_expander = st.expander("View Database Schema")
+        with schema_expander:
             for name, info in st.session_state.table_info.items():
                 st.subheader(f"Table: {name}")
                 st.write(f"Columns: {', '.join(info['columns'])}")
                 st.dataframe(pd.DataFrame(info['sample_data']))
     
     if st.session_state.db_path:
-        st.header("Generate SQL Query")
+        st.subheader("Generate SQL Query")
         question = st.text_area("Enter your data question:", height=100, key="sql_question")
         if st.button("Generate SQL Query"):
             if question:
@@ -61,8 +67,7 @@ with st.expander("Database Query Feature", expanded=True):
             else:
                 st.warning("Please enter a question.")
 
-
-with st.expander("Website QA Feature"):
+with tab2:
     st.header("Website Question Answering")
     web_url = st.text_input("Enter website URL:")
     web_question = st.text_input("Question about the website content:")
@@ -81,8 +86,7 @@ with st.expander("Website QA Feature"):
         else:
             st.warning("Please provide both URL and question")
 
-
-with st.expander("YouTube Summary Feature"):
+with tab3:
     st.header("YouTube Video Summarizer")
     yt_url = st.text_input("Enter YouTube Video URL:")
     
