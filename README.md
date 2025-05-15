@@ -1,6 +1,6 @@
 # Multi-Feature AI Assistant 🤖
 
-![AI Assistant Demo](D:\JMM_Technologies\Text_to_SQL_Groq_API\demo.png)
+![AI Assistant Demo](demo.png)
 
 A comprehensive Streamlit application combining three powerful AI-driven tools:
 1. **Natural Language to SQL Generator** 🔍
