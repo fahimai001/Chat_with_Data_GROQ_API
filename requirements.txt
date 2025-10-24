@@ -5,3 +5,4 @@ pandas
 sqlite3
 youtube_transcript_api
 trafilatura
+pytube

@@ -1,5 +1,6 @@
 # Multi-Feature AI Assistant 🤖
 
+![Text-to-SQL](output.png)
 ![AI Assistant Demo](demo.png)
 
 A comprehensive Streamlit application combining three powerful AI-driven tools:

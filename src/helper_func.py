@@ -5,7 +5,7 @@ from langchain_core.output_parsers import StrOutputParser
 
 
 def create_llm(api_key):
-    return ChatGroq(model="gemma2-9b-it", temperature=0.1, groq_api_key=api_key)
+    return ChatGroq(model="llama-3.1-8b-instant", temperature=0.1, groq_api_key=api_key)
 
 
 def generate_sql_query(llm, schema, question):
